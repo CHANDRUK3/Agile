@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Tickets - BusGo</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="logo">BusGo</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="book.html" class="btn btn-reservation">Book Now</a></li>
+            </ul>
+            <div class="auth-buttons">
+                <a href="#login-modal" class="btn btn-login">Login</a>
+                <a href="#signup-modal" class="btn btn-signup">Sign Up</a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="reservation-content">
+        <h1 class="reservation-title">Book Your Seat</h1>
+        
+        <div class="reservation-container">
+            <div class="bus-layout">
+                <h3>Select Your Seat - Volvo Multi-Axle (Chennai → Bangalore)</h3>
+                
+                <div class="seat-legend">
+                    <div class="legend-item">
+                        <div class="legend-seat legend-available"></div>
+                        <span>Available</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-seat legend-selected"></div>
+                        <span>Selected</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-seat legend-occupied"></div>
+                        <span>Occupied</span>
+                    </div>
+                </div>
+
+                <div class="bus-seats">
+                    <div class="seat" onclick="selectSeat(this, 'A1')">A1</div>
+                    <div class="seat" onclick="selectSeat(this, 'A2')">A2</div>
+                    <div class="seat" onclick="selectSeat(this, 'A3')">A3</div>
+                    <div class="seat" onclick="selectSeat(this, 'A4')">A4</div>
+                    
+                    <div class="seat" onclick="selectSeat(this, 'B1')">B1</div>
+                    <div class="seat occupied">B2</div>
+                    <div class="seat" onclick="selectSeat(this, 'B3')">B3</div>
+                    <div class="seat" onclick="selectSeat(this, 'B4')">B4</div>
+                    
+                    <div class="seat" onclick="selectSeat(this, 'C1')">C1</div>
+                    <div class="seat" onclick="selectSeat(this, 'C2')">C2</div>
+                    <div class="seat occupied">C3</div>
+                    <div class="seat" onclick="selectSeat(this, 'C4')">C4</div>
+                    
+                    <div class="seat" onclick="selectSeat(this, 'D1')">D1</div>
+                    <div class="seat" onclick="selectSeat(this, 'D2')">D2</div>
+                    <div class="seat" onclick="selectSeat(this, 'D3')">D3</div>
+                    <div class="seat occupied">D4</div>
+                    
+                    <div class="seat" onclick="selectSeat(this, 'E1')">E1</div>
+                    <div class="seat" onclick="selectSeat(this, 'E2')">E2</div>
+                    <div class="seat" onclick="selectSeat(this, 'E3')">E3</div>
+                    <div class="seat" onclick="selectSeat(this, 'E4')">E4</div>
+                </div>
+            </div>
+
+            <div class="booking-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="passenger-name">Passenger Name</label>
+                        <input type="text" id="passenger-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" required>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="from">From</label>
+                        <select id="from">
+                            <option value="Chennai">Chennai</option>
+                            <option value="Mumbai">Mumbai</option>
+                            <option value="Delhi">Delhi</option>
+                            <option value="Hyderabad">Hyderabad</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="to">To</label>
+                        <select id="to">
+                            <option value="Bangalore">Bangalore</option>
+                            <option value="Pune">Pune</option>
+                            <option value="Jaipur">Jaipur</option>
+                            <option value="Vijayawada">Vijayawada</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="travel-date">Travel Date</label>
+                        <input type="date" id="travel-date" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" required>
+                    </div>
+                </div>
+
+                <div class="booking-summary">
+                    <h3 style="margin-bottom: 15px;">Booking Summary</h3>
+                    <div class="summary-row">
+                        <span>Selected Seats:</span>
+                        <span id="selected-seats">None</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Number of Tickets:</span>
+                        <span id="ticket-count">0</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Price per Ticket:</span>
+                        <span>₹850</span>
+                    </div>
+                    <div class="summary-row total-row">
+                        <span>Total Amount:</span>
+                        <span id="total-amount">₹0</span>
+                    </div>
+                </div>
+
+                <button type="submit" class="form-submit">Confirm Booking & Pay</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
